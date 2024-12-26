@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
 import 'package:google_fonts/google_fonts.dart';
 
+// Import your page files
+import 'weather_page.dart';
+import 'farming_tips_page.dart';
+import 'market_prices_page.dart';
+import 'expert_consultation_page.dart';
+import 'soil_info_page.dart';
+import 'water_table_page.dart';
+import 'satellite_imaging_page.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -58,22 +67,22 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: Icon(Icons.dashboard),
               title: Text('Dashboard'),
-              onTap: () {},
+              onTap: () {}, // Add navigation logic for Dashboard here
             ),
             ListTile(
               leading: Icon(Icons.agriculture),
               title: Text('Services'),
-              onTap: () {},
+              onTap: () {}, // Add navigation logic for Services here
             ),
             ListTile(
               leading: Icon(Icons.person),
               title: Text('Profile'),
-              onTap: () {},
+              onTap: () {}, // Add navigation logic for Profile here
             ),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
-              onTap: () {},
+              onTap: () {}, // Add navigation logic for Settings here
             ),
           ],
         ),
@@ -103,9 +112,6 @@ class _HomePageState extends State<HomePage> {
               // News Feed/Updates Section
               _buildNewsFeed(),
               SizedBox(height: 16),
-              // Motivational Quotes or Farmer Community Section
-           //   _buildMotivationalQuotes(),
-              SizedBox(height: 16),
               // Quick Actions Section (Grid of Features)
               Expanded(
                 child: GridView.count(
@@ -116,41 +122,73 @@ class _HomePageState extends State<HomePage> {
                     FeatureCard(
                       icon: Icons.cloud,
                       label: 'Weather Updates',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => WeatherPage()),
+                        );
+                      },
                     ),
                     FeatureCard(
                       icon: Icons.lightbulb,
                       label: 'Farming Tips',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FarmingTipsPage()),
+                        );
+                      },
                     ),
                     FeatureCard(
                       icon: Icons.attach_money,
                       label: 'Market Prices',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MarketPricesPage()),
+                        );
+                      },
                     ),
                     FeatureCard(
                       icon: Icons.headset_mic,
                       label: 'Expert Consultation',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ExpertConsultationPage()),
+                        );
+                      },
                     ),
                     FeatureCard(
                       icon: Icons.terrain,
                       label: 'Soil Information',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SoilInfoPage()),
+                        );
+                      },
                     ),
                     FeatureCard(
                       icon: Icons.water,
                       label: 'Water Table',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => WaterTablePage()),
+                        );
+                      },
                     ),
                     FeatureCard(
                       icon: Icons.satellite_alt,
                       label: 'Satellite Imaging',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SatelliteImagingPage()),
+                        );
+                      },
                     ),
-                    _buildAdSpace(),
-                    _buildAdSpace(),
-                    _buildAdSpace(),
                   ],
                 ),
               ),
@@ -213,9 +251,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
- 
-  
 
   // Ad Space Container with Gradient Background
   Widget _buildAdSpace() {
