@@ -10,6 +10,8 @@ import 'expert_consultation_page.dart';
 import 'soil_info_page.dart';
 import 'water_table_page.dart';
 import 'satellite_imaging_page.dart';
+import 'my_farm_page.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -53,40 +55,72 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(color: Colors.green),
-              child: Text(
-                'Navigation',
-                style: TextStyle(color: Colors.white, fontSize: 24),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.dashboard),
-              title: Text('Dashboard'),
-              onTap: () {}, // Add navigation logic for Dashboard here
-            ),
-            ListTile(
-              leading: Icon(Icons.agriculture),
-              title: Text('Services'),
-              onTap: () {}, // Add navigation logic for Services here
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Profile'),
-              onTap: () {}, // Add navigation logic for Profile here
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {}, // Add navigation logic for Settings here
-            ),
-          ],
-        ),
+   drawer: Drawer(
+  child: Container(
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [Colors.teal, Colors.blueAccent],
       ),
+    ),
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: [
+        DrawerHeader(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.cyan, Colors.indigo],
+            ),
+          ),
+          child: Text(
+            'Navigation',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.dashboard, color: Colors.white),
+          title: Text(
+            'Dashboard',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {}, // Add navigation logic for Dashboard here
+        ),
+        ListTile(
+          leading: Icon(Icons.agriculture, color: Colors.white),
+          title: Text(
+            'Services',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {}, // Add navigation logic for Services here
+        ),
+        ListTile(
+          leading: Icon(Icons.person, color: Colors.white),
+          title: Text(
+            'Profile',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {}, // Add navigation logic for Profile here
+        ),
+        ListTile(
+          leading: Icon(Icons.settings, color: Colors.white),
+          title: Text(
+            'Settings',
+            style: TextStyle(color: Colors.white),
+          ),
+          onTap: () {}, // Add navigation logic for Settings here
+        ),
+      ],
+    ),
+  ),
+),
+
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -119,6 +153,16 @@ class _HomePageState extends State<HomePage> {
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
                   children: [
+                    FeatureCard(
+                      icon: Icons.agriculture,
+                      label: 'My Farm',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MyFarmPage()),
+                        );
+                      },
+                    ),
                     FeatureCard(
                       icon: Icons.cloud,
                       label: 'Weather Updates',

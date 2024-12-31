@@ -38,6 +38,9 @@ dependencies:
   shared_preferences: ^2.0.15  # Ensure this is the latest version
   google_fonts: ^4.0.0  # Ensure this is included
   google_maps_flutter: ^2.2.1
+  flutter_facebook_auth: ^5.0.1  # Add this line for Facebook authentication
+  url_launcher: ^6.3.1
+
 
 
 
