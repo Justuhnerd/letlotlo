@@ -11,6 +11,10 @@ import 'soil_info_page.dart';
 import 'water_table_page.dart';
 import 'satellite_imaging_page.dart';
 import 'my_farm_page.dart';
+import 'profile.dart'; // Import Profile page for navigation
+import 'settings.dart'; // Import Settings page for navigation
+
+
 
 
 class HomePage extends StatefulWidget {
@@ -100,22 +104,36 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {}, // Add navigation logic for Services here
         ),
-        ListTile(
-          leading: Icon(Icons.person, color: Colors.white),
-          title: Text(
-            'Profile',
-            style: TextStyle(color: Colors.white),
-          ),
-          onTap: () {}, // Add navigation logic for Profile here
-        ),
-        ListTile(
-          leading: Icon(Icons.settings, color: Colors.white),
-          title: Text(
-            'Settings',
-            style: TextStyle(color: Colors.white),
-          ),
-          onTap: () {}, // Add navigation logic for Settings here
-        ),
+       ListTile(
+  leading: Icon(Icons.person, color: Colors.white),
+  title: Text(
+    'Profile',
+    style: TextStyle(color: Colors.white),
+  ),
+  onTap: () {
+    // Navigate to Profile page
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ProfilePage()), // Navigate to Profile page
+    );
+  },
+),
+
+ListTile(
+  leading: Icon(Icons.settings, color: Colors.white),
+  title: Text(
+    'Settings',
+    style: TextStyle(color: Colors.white),
+  ),
+  onTap: () {
+    // Navigate to Settings page
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SettingsPage()), // Navigate to Settings page
+    );
+  },
+),
+
       ],
     ),
   ),
