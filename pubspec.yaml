@@ -40,6 +40,9 @@ dependencies:
   google_maps_flutter: ^2.2.1
   flutter_facebook_auth: ^5.0.1  # Add this line for Facebook authentication
   url_launcher: ^6.3.1
+  http: ^0.13.6
+  geolocator: ^9.0.2
+
 
 
 
